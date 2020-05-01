@@ -36,9 +36,9 @@ function addNumbers(num1, num2) {
  * 
 */
 function sayGoodbye(name) {
-  console.log("Goodbye " + name + ". Have a great day");
+  console.log("Goodbye, " + name + ". Have a great day.");
  }
- sayGoodbye("Andy");
+ sayGoodbye("Hannah");
 /**
  * ### Challenge `temperatureCtoF`
  * 
@@ -53,10 +53,11 @@ function sayGoodbye(name) {
  * Hint 1: The formula for converting celsius to fahrenheit is t*9/5 + 32 where t is the temperature in celsius.
  * Hint 2: There is a very easy way to round numbers in JS. Do a google search to find out how. 
 */
-function temperatureCtoF(/* code here */) {
-  /* code here */
+function temperatureCtoF(CeltoFah) {
+  let temp = Math.round (CeltoFah *(9/5) + 32)
+  console.log (temp);
 }
-
+temperatureCtoF(24);
 /**
  * ### Challenge `temperatureInF`
  * 
@@ -74,9 +75,16 @@ function temperatureCtoF(/* code here */) {
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(/* code here */) {
-  /* code here */
-}
+function temperatureInF(temp,unit){
+  if (unit == "F"){
+    console.log ("Temperature is " + temp + unit + " !");
+  }
+  else if (unit == "C"){
+   let temptoC = Math.round(temp *(9/5) + 32)
+   console.log ("Temperature is " + temptoC +  "F !")
+  }
+  }
+  temperatureInF(24,"C");
 
 
 /**
@@ -95,9 +103,11 @@ function temperatureInF(/* code here */) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
-}
+function makePersonObject(id, name, email){
+  let objs = {id, name, email}
+  console.log(objs.id, objs.name, objs.email);
+  }
+  makePersonObject(5,"lin","nothing@com");
 
 /**
  * ### Challenge `getName`
@@ -112,9 +122,11 @@ function makePersonObject(/* code here */) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
+function getName(){
+  let obj = {id: 1, name: 'Leia', email: "test" }
+  console.log("Hello my name is " + obj.name +".");
 }
+getName();
 
 
 /**
@@ -132,9 +144,11 @@ function getName(/* code here */) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(/* code here */) {
-  /* code here */
+function appleIndex(){
+  const fruits = ['orange', 'grape', 'apple', 'banana', 'mango'];
+  console.log(fruits.indexOf("apple"));
 }
+appleIndex();
 
 /**
  * ### Challenge `isItAnApple`
@@ -151,9 +165,21 @@ function appleIndex(/* code here */) {
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+const fruits = [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ];
+
+function isItAnApple(arr) {
+  let checkArray = []
+  for(let i = 0; i < arr.length; i++){
+    let fruit = false;
+    if(arr[i]=="apple") {
+      fruit = true;
+    }
+    checkArray.push(fruit);
+  }
+  return checkArray;
 }
+
+console.log(isItAnApple(fruits));
 
 
 
@@ -210,9 +236,7 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
-  /* code here */
-}
-
+  
 /**
  * ### Challenge `getLastCarInfo`
  * 
